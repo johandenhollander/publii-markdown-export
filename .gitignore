@@ -1,0 +1,24 @@
+# Development files - not for distribution
+CLAUDE.md
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Node modules (if ever needed for dev)
+node_modules/
+
+# Test files
+test/
+*.test.js
+
+# Build artifacts
+*.zip
+markdown-svgrepo-com.svg

@@ -1,0 +1,51 @@
+{
+    "name": "Markdown Export",
+    "description": "Generates markdown versions of posts and pages for LLM/AI consumption. Creates .md files alongside HTML output, making your content accessible to AI assistants and search engines.",
+    "license": "GPL-3.0",
+    "author": "Publii Community",
+    "version": "1.0.0",
+    "scope": "site",
+    "minimumPubliiVersion": "0.44.0",
+    "config": [
+        {
+            "name": "exportPosts",
+            "label": "Export Posts",
+            "type": "checkbox",
+            "value": true,
+            "group": "Content",
+            "note": "Generate markdown files for all published posts."
+        },
+        {
+            "name": "exportPages",
+            "label": "Export Pages",
+            "type": "checkbox",
+            "value": true,
+            "group": "Content",
+            "note": "Generate markdown files for all published pages."
+        },
+        {
+            "name": "generateIndex",
+            "label": "Generate Content Index",
+            "type": "checkbox",
+            "value": true,
+            "group": "Content",
+            "note": "Create a content.md file listing all available markdown files."
+        },
+        {
+            "name": "generateLlmsTxt",
+            "label": "Generate llms.txt",
+            "type": "checkbox",
+            "value": true,
+            "group": "AI Discovery",
+            "note": "Create an llms.txt file that helps AI crawlers understand your site's markdown content."
+        },
+        {
+            "name": "generateSitemap",
+            "label": "Generate Markdown Sitemap",
+            "type": "checkbox",
+            "value": true,
+            "group": "AI Discovery",
+            "note": "Create sitemap-markdown.xml listing all markdown files for search engines and AI crawlers."
+        }
+    ]
+}
