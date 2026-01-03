@@ -1,0 +1,32 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Get version from tag
+        id: version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+
+      - name: Build ZIP
+        run: |
+          mkdir -p markdownExport
+          cp main.js plugin.json thumbnail.svg LICENSE markdownExport/
+          zip -r publii-markdown-export_${{ steps.version.outputs.VERSION }}.zip markdownExport
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: publii-markdown-export_${{ steps.version.outputs.VERSION }}.zip
+          generate_release_notes: true
